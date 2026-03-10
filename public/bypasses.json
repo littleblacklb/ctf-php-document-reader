@@ -1,0 +1,85 @@
+{
+  "escapeshellcmd": [
+    {
+      "technique": "Double escape with escapeshellarg",
+      "payload": "127.0.0.1' -v -d a=1",
+      "versions": "All versions"
+    },
+    {
+      "technique": "Argument injection",
+      "payload": "Use both escapeshellcmd() and escapeshellarg() together to bypass",
+      "versions": "All versions"
+    }
+  ],
+  "preg_match": [
+    {
+      "technique": "Newline bypass",
+      "payload": "admin%0amalicious",
+      "versions": "All versions (without PCRE_DOTALL)"
+    },
+    {
+      "technique": "PCRE backtrack limit",
+      "payload": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa!",
+      "versions": "All versions (default pcre.backtrack_limit)"
+    }
+  ],
+  "strcmp": [
+    {
+      "technique": "Array comparison",
+      "payload": "strcmp($_POST['pass'], 'secret') -> strcmp([], 'secret') returns NULL",
+      "versions": "PHP < 8.0"
+    },
+    {
+      "technique": "NULL byte",
+      "payload": "admin\\x00malicious",
+      "versions": "PHP < 5.4"
+    }
+  ],
+  "in_array": [
+    {
+      "technique": "Loose comparison type juggling",
+      "payload": "in_array('0e123', ['0e456']) returns true with loose comparison",
+      "versions": "All versions (without strict parameter)"
+    }
+  ],
+  "md5": [
+    {
+      "technique": "Magic hash collision",
+      "payload": "240610708 and QNKCDZO both hash to 0e...",
+      "versions": "All versions"
+    },
+    {
+      "technique": "Array to NULL",
+      "payload": "md5([]) returns NULL, bypasses comparisons",
+      "versions": "PHP < 8.0"
+    }
+  ],
+  "parse_url": [
+    {
+      "technique": "URL parser differential",
+      "payload": "http://evil.com#@good.com/",
+      "versions": "All versions"
+    }
+  ],
+  "extract": [
+    {
+      "technique": "Variable overwrite",
+      "payload": "extract($_GET) can overwrite any variable",
+      "versions": "All versions (without EXTR_SKIP)"
+    }
+  ],
+  "is_numeric": [
+    {
+      "technique": "Hexadecimal bypass",
+      "payload": "0x1234 is considered numeric",
+      "versions": "All versions"
+    }
+  ],
+  "file_get_contents": [
+    {
+      "technique": "SSRF via wrappers",
+      "payload": "file_get_contents('http://internal-server/')",
+      "versions": "All versions (with allow_url_fopen)"
+    }
+  ]
+}

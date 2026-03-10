@@ -1,0 +1,44 @@
+{
+  "unserialize": [
+    {
+      "cveId": "CVE-2023-3247",
+      "description": "PHP unserialize() allows arbitrary code execution via crafted serialized data",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2023-3247"
+    }
+  ],
+  "file_get_contents": [
+    {
+      "cveId": "CVE-2022-31628",
+      "description": "SSRF vulnerability in file_get_contents with phar:// wrapper",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2022-31628"
+    }
+  ],
+  "simplexml_load_string": [
+    {
+      "cveId": "CVE-2021-21707",
+      "description": "XXE vulnerability in SimpleXML functions",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2021-21707"
+    }
+  ],
+  "imap_open": [
+    {
+      "cveId": "CVE-2018-19518",
+      "description": "Remote code execution via imap_open() with malicious server",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2018-19518"
+    }
+  ],
+  "preg_replace": [
+    {
+      "cveId": "CVE-2016-5773",
+      "description": "RCE via /e modifier in preg_replace (PHP < 7.0)",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2016-5773"
+    }
+  ],
+  "curl_exec": [
+    {
+      "cveId": "CVE-2022-35252",
+      "description": "SSRF in curl with file:// protocol",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2022-35252"
+    }
+  ]
+}

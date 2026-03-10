@@ -1,0 +1,201 @@
+/* Catppuccin Mocha Theme */
+:root {
+  --ctp-rosewater: #f5e0dc;
+  --ctp-flamingo: #f2cdcd;
+  --ctp-pink: #f5c2e7;
+  --ctp-mauve: #cba6f7;
+  --ctp-red: #f38ba8;
+  --ctp-maroon: #eba0ac;
+  --ctp-peach: #fab387;
+  --ctp-yellow: #f9e2af;
+  --ctp-green: #a6e3a1;
+  --ctp-teal: #94e2d5;
+  --ctp-sky: #89dceb;
+  --ctp-sapphire: #74c7ec;
+  --ctp-blue: #89b4fa;
+  --ctp-lavender: #b4befe;
+  --ctp-text: #cdd6f4;
+  --ctp-subtext1: #bac2de;
+  --ctp-subtext0: #a6adc8;
+  --ctp-overlay2: #9399b2;
+  --ctp-overlay1: #7f849c;
+  --ctp-overlay0: #6c7086;
+  --ctp-surface2: #585b70;
+  --ctp-surface1: #45475a;
+  --ctp-surface0: #313244;
+  --ctp-base: #1e1e2e;
+  --ctp-mantle: #181825;
+  --ctp-crust: #11111b;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  background: var(--ctp-base);
+  color: var(--ctp-text);
+  overflow: hidden;
+}
+
+#app {
+  height: 100vh;
+  display: flex;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--ctp-mantle);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--ctp-surface2);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--ctp-overlay0);
+}
+
+/* Utility classes */
+.badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.badge-blue { background: var(--ctp-blue); color: var(--ctp-crust); }
+.badge-green { background: var(--ctp-green); color: var(--ctp-crust); }
+.badge-purple { background: var(--ctp-mauve); color: var(--ctp-crust); }
+.badge-peach { background: var(--ctp-peach); color: var(--ctp-crust); }
+.badge-yellow { background: var(--ctp-yellow); color: var(--ctp-crust); }
+.badge-red { background: var(--ctp-red); color: var(--ctp-crust); }
+.badge-grey { background: var(--ctp-surface2); color: var(--ctp-text); }
+
+.btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  background: var(--ctp-surface0);
+  color: var(--ctp-text);
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s;
+}
+
+.btn:hover {
+  background: var(--ctp-surface1);
+}
+
+.btn-primary {
+  background: var(--ctp-blue);
+  color: var(--ctp-crust);
+}
+
+.btn-primary:hover {
+  background: var(--ctp-sapphire);
+}
+
+.btn-danger {
+  background: var(--ctp-red);
+  color: var(--ctp-crust);
+}
+
+.btn-danger:hover {
+  background: var(--ctp-maroon);
+}
+
+input[type="text"],
+input[type="search"],
+textarea {
+  background: var(--ctp-surface0);
+  border: 1px solid var(--ctp-surface2);
+  color: var(--ctp-text);
+  border-radius: 6px;
+  padding: 8px 12px;
+  font-size: 14px;
+  font-family: inherit;
+}
+
+input[type="text"]:focus,
+input[type="search"]:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--ctp-blue);
+}
+
+select {
+  background: var(--ctp-surface0);
+  border: 1px solid var(--ctp-surface2);
+  color: var(--ctp-text);
+  border-radius: 6px;
+  padding: 8px 12px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal {
+  background: var(--ctp-mantle);
+  border-radius: 12px;
+  padding: 24px;
+  max-width: 90vw;
+  max-height: 90vh;
+  overflow: auto;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+.code-block {
+  background: var(--ctp-crust);
+  border: 1px solid var(--ctp-surface0);
+  border-radius: 6px;
+  padding: 12px;
+  font-family: 'Monaco', 'Menlo', 'Courier New', monospace;
+  font-size: 13px;
+  overflow-x: auto;
+  white-space: pre;
+}
+
+.tag-pill {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 16px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  margin: 4px;
+  white-space: nowrap;
+}
+
+.tag-pill:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.tag-pill.active {
+  box-shadow: 0 0 0 2px var(--ctp-text);
+}
